@@ -79,7 +79,7 @@ if [ $1 = "up" ]; then
     
     
     echo "== setting static IP on bridge interface"
-    sudo ifconfig br0 inet $LAN_IP netmask $LAN_SUBNET
+    sudo ifconfig $BR_IFACE inet $LAN_IP netmask $LAN_SUBNET
     
     echo "== starting dnsmasq"
     sudo dnsmasq -C $DNSMASQ_CONF
